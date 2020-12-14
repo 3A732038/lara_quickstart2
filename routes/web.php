@@ -20,4 +20,6 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
+Route::get('/tasks',[\App\Http\Controllers\TaskController::class,'index'])->name('tasks');
+Route::post('/task',[\App\Http\Controllers\TaskController::class,'store'])->name('task');
+Route::delete('/task/{task}',[\App\Http\Controllers\TaskController::class,'destory'])->name('task.delete');
