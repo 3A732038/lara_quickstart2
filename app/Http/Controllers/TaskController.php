@@ -39,6 +39,11 @@ class TaskController extends Controller
         return redirect('/tasks');
 
     }
+    public function destory(Request $request, Task $task)
+    {
 
+        $task->delete();
+        return redirect('/tasks');
+    }
 
 }
